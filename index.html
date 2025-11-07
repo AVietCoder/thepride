@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The PRIDE — Bỏng Gạo Ống Vị Phở Bò</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FFF8F0;
+      --accent:#D97706; /* amber-600 */
+      --accent-2:#FDE68A; /* amber-200 */
+      --muted:#6B7280;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.7);
+      --radius:18px;
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg),#FFF4E6);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .container{max-width:var(--container);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{
+      display:flex;align-items:center;justify-content:space-between;padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#FB923C);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-family:Marcellus,serif;font-size:18px;box-shadow:0 6px 18px rgba(216,180,0,0.18)
+    }
+    .brand h1{margin:0;font-size:18px}
+    nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:white;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(217,119,6,0.18)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:center;padding:48px 0}
+    .hero-left{max-width:640px}
+    .kicker{display:inline-block;padding:6px 12px;background:var(--accent-2);border-radius:999px;font-weight:700;color:#92400E;margin-bottom:18px}
+    .display{font-size:44px;line-height:1.02;margin:0 0 14px;font-weight:800}
+    .display small{display:block;font-size:18px;font-weight:600;color:var(--muted);margin-top:8px}
+    .desc{color:var(--muted);margin-bottom:22px}
+    .actions{display:flex;gap:14px;align-items:center}
+    .btn-primary{background:var(--accent);color:white;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(217,119,6,0.16)}
+    .btn-ghost{background:transparent;border:2px solid rgba(17,24,39,0.06);padding:10px 16px;border-radius:12px;text-decoration:none;color:var(--muted);font-weight:700}
+
+    /* Product card */
+    .card{background:var(--card);border-radius:20px;padding:20px;box-shadow:0 10px 30px rgba(15,23,42,0.06);display:flex;flex-direction:column;align-items:center}
+    .product-visual{width:320px;height:380px;border-radius:14px;overflow:hidden;position:relative;background:linear-gradient(180deg,#fff 0%,#FFF7ED 100%);display:flex;align-items:center;justify-content:center}
+    .tube{width:160px;height:260px;background:linear-gradient(180deg,#fff,#FFEFD5);border-radius:18px;border:6px solid rgba(217,119,6,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 18px 40px rgba(249,115,22,0.12)}
+    .tube:before{content:"";position:absolute;left:22px;top:18px;width:116px;height:8px;background:linear-gradient(90deg,#FFDAB9,#FFF);border-radius:6px;opacity:0.9}
+    .tube p{margin:0;font-weight:700;color:#92400E}
+    .flavor{margin-top:10px;font-size:13px;color:var(--muted)}
+    .info{margin-top:14px;text-align:center}
+    .price{font-weight:800;font-size:20px;color:#111827}
+    .badge{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:999px;background:#ECFCCB;color:#365314;font-weight:700;font-size:13px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+    .feature{background:var(--glass);padding:18px;border-radius:14px;text-align:center}
+    .feature h4{margin:12px 0 6px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Story */
+    .story{display:flex;gap:28px;align-items:center;margin-top:54px}
+    .story img{width:44%;border-radius:16px;object-fit:cover}
+    .story .txt{width:56%}
+    .story h3{margin-top:0}
+
+    footer{margin-top:60px;padding:28px 0;border-top:1px solid rgba(17,24,39,0.04);display:flex;justify-content:space-between;align-items:center}
+    footer p{margin:0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-right{order:-1}
+      .product-visual{width:100%;height:320px}
+      .features{grid-template-columns:1fr}
+      .story{flex-direction:column}
+      .story img{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">PR</div>
+        <div>
+          <h1 style="font-size:16px;margin:0">The PRIDE</h1>
+          <div style="font-size:12px;color:var(--muted)">Bỏng gạo ống — Hương vị phở</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#story">Câu chuyện</a>
+        <a href="#features">Tính năng</a>
+        <a class="cta" href="#buy">Mua Ngay</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <span class="kicker">Hương vị Việt • Fusion Snack</span>
+        <h2 class="display">Bỏng gạo ống vị <span style="color:var(--accent)">Phở Bò</span><small>— Giòn tan, đậm đà, mang hồn Việt trong từng miếng</small></h2>
+        <p class="desc">Kết hợp gạo quê với tinh hoa gia vị truyền thống: quế, hồi, gừng và hành — tạo nên trải nghiệm snack vừa quen vừa lạ, ít dầu mỡ, phù hợp ăn hàng ngày.</p>
+        <div class="actions">
+          <a href="#buy" class="btn-primary">Mua Ngay</a>
+          <a href="#story" class="btn-ghost">Tìm hiểu thêm</a>
+        </div>
+
+        <div class="features" id="features">
+          <div class="feature">
+            <div style="font-size:28px;font-weight:800;color:var(--accent)">Ngon</div>
+            <h4>Hương phở chân thực</h4>
+            <p>Gia vị truyền thống được phối chuẩn, mang vị phở đậm đà trong dạng snack.</p>
+          </div>
+          <div class="feature">
+            <div style="font-size:28px;font-weight:800;color:var(--accent)">Lành mạnh</div>
+            <h4>Ít dầu — Ít phụ gia</h4>
+            <p>Quy trình tinh giảm dầu mỡ, ưu tiên nguyên liệu tự nhiên và ít chất bảo quản.</p>
+          </div>
+          <div class="feature">
+            <div style="font-size:28px;font-weight:800;color:var(--accent)">Câu chuyện</div>
+            <h4>Bản sắc Việt</h4>
+            <p>Mỗi gói là một câu chuyện về ẩm thực và ký ức quê hương, hướng đến thế hệ trẻ.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card">
+          <div class="product-visual">
+            <div class="tube">
+              <p style="font-size:20px">Bỏng Gạo Ống</p>
+              <div class="flavor">Vị Phở Bò — Giòn Tan</div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="price">12.000₫ / gói (35g)</div>
+            <div class="badge">Cam kết: Không chất bảo quản</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="story" id="story">
+      <img src="https://images.unsplash.com/photo-1566055115655-9d8b6b0f5c3b?auto=format&fit=crop&w=1200&q=80" alt="Phở — cảm hứng"/>
+      <div class="txt">
+        <h3>Hồi sinh hương vị — Kể câu chuyện ẩm thực</h3>
+        <p style="color:var(--muted)">The PRIDE ra đời từ niềm đam mê giữ gìn bản sắc ẩm thực. Chúng tôi biến món quà tuổi thơ thành snack tiện lợi, phù hợp với nhịp sống hiện đại nhưng vẫn giữ trọn bản sắc. Từ lựa chọn giống gạo, phối gia vị đến quy trình sản xuất đều được thử nghiệm để cân bằng vị ngon và tiêu chí lành mạnh.</p>
+        <p style="margin-top:12px"><strong>Ý tưởng độc đáo:</strong> biến phở — tinh hoa ẩm thực Việt — thành một trải nghiệm snack, để thế hệ trẻ vừa thưởng thức vừa cảm nhận văn hóa qua mùi vị.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© The PRIDE — Bảo tồn & Lan tỏa hương vị Việt</p>
+      <p style="font-size:13px;color:var(--muted)">Liên hệ: hello@thepride.vn • Hà Nội</p>
+    </footer>
+  </div>
+</body>
+</html>
